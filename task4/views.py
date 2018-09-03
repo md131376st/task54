@@ -37,18 +37,21 @@ def static_page(request, page_alias):  # page_alias holds the part of the url
         if e == page_alias[len(page_alias)-1]:
 
             if (name[e].dtype == 'object'):
-                # print("hi")
-                task.statistics_of_categorical_data(name[e])
+                print("hi")
+                # print(name[e])
+                return task.statistics_of_categorical_data(name[e])
             else:
                 for each in name[e]:
                     if (each != 0 and each != 1):
                          isBool = False
                          break
                 if isBool == True:
-                    task.statistics_of_binary_data(name[e])
-                    # print("hi1")
+                    print("hi1")
+                    return task.statistics_of_binary_data(name[e])
+
                 else:
-                    task.statistics_of_numerical_data(name[e])
-                    # print("hi2")
-    return Http404("Page does not exist")
+                    print("hi2")
+                    return task.statistics_of_numerical_data(name[e])
+
+    raise Http404("Page does not exist")
 

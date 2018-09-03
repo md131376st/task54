@@ -18,6 +18,16 @@
 {#    {{ df }}#}
 {#    {{ data.items }}#}
     <table>
+         <thead>
+            <tr>
+                {% for row in df.columns %}
+{#            <p> hi</p>#}
+                    <th><a href="{{ row }}"> {{ row }}&nbsp;&nbsp;&nbsp;</a>     </th>
+                {% endfor %}
+{#      <th>{{ df.columns.0 }} </td>#}
+{#      <th>{{ df.columns.1 }} </td>#}
+        </tr>
+        </thead>
         {% for row in df.values %}
      <tr>
         {% for subrow in row %}
@@ -31,16 +41,7 @@
 {#        <td> {{row.1}} </td>#}
      </tr>
  {% endfor %}
-         <thead>
-    <tr>
-        {% for row in df.columns %}
-{#            <p> hi</p>#}
-            <th><a href="{{ row }}"> {{ row }}&nbsp;&nbsp;&nbsp;</a>     </th>
-            {% endfor %}
-{#      <th>{{ df.columns.0 }} </td>#}
-{#      <th>{{ df.columns.1 }} </td>#}
-    </tr>
-  </thead>
+
 {#  <tbody>#}
 {#     {% for index, row in df.iterrows|slice:":1" %}#}
 {#     <tr>#}
