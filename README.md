@@ -1,1 +1,24 @@
-# task54
+asn1crypto==0.24.0
+cffi==1.11.5
+cryptography==2.3.1
+cycler==0.10.0
+Cython==0.28.5
+Django==2.1
+django-tables2==1.21.2
+ez-setup==0.9
+idna==2.7
+kiwisolver==1.0.1
+matlab==0.1
+matplotlib==2.2.3
+mysql-connector-python==2.0.4
+mysqlclient==1.3.13
+numpy==1.15.1
+pandas==0.23.4
+protobuf==3.6.1
+pycparser==2.18
+PyMySQL==0.9.2
+pyparsing==2.2.0
+pystan==2.17.1.0
+python-dateutil==2.7.3
+pytz==2018.5
+six==1.11.0
