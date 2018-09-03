@@ -1,0 +1,86 @@
+{% extends 'basic.html' %}
+{#{% load render_table from django_tables2 %}#}
+{#{% load static %}#}
+{% block body %}
+    <style>
+    table, th, td {
+        background:#fefefe;
+        border-spacing: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+        padding: 10px;
+}
+    th{
+        background: #79aec8;
+    }
+    </style>
+{#    {{ df}}#}
+{#    {{ df }}#}
+{#    {{ data.items }}#}
+    <table>
+        {% for row in df.values %}
+     <tr>
+        {% for subrow in row %}
+{#            <th>#}
+{#            <div class="col-sm-offset-2 row_sm_offset-2">#}
+            <td>&nbsp;{{ subrow}} </td>
+{#            </th>#}
+{#            </div>#}
+            {% endfor %}
+{#        <td> {{row.0}} </td>#}
+{#        <td> {{row.1}} </td>#}
+     </tr>
+ {% endfor %}
+         <thead>
+    <tr>
+        {% for row in df.columns %}
+{#            <p> hi</p>#}
+            <th><a href="{{ row }}"> {{ row }}&nbsp;&nbsp;&nbsp;</a>     </th>
+            {% endfor %}
+{#      <th>{{ df.columns.0 }} </td>#}
+{#      <th>{{ df.columns.1 }} </td>#}
+    </tr>
+  </thead>
+{#  <tbody>#}
+{#     {% for index, row in df.iterrows|slice:":1" %}#}
+{#     <tr>#}
+{#       <td> {{row.0}} </td>#}
+{#       <td> {{row.1}} </td>#}
+{#     </tr>#}
+{#     {% endfor %}#}
+
+{#        {% for row in data.items %}#}
+{#        <tr>#}
+{#            <td> {{ row }}<br></td></tr>#}
+{##}
+{#            {% for sub_row in row %}#}
+{#                <tr>#}
+{#                 <td> {{ sub_row }}</td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+{##}
+{#        </tr>#}
+{#        {% endfor %}#}
+    </table>
+
+{#    {{ data }}#}
+{#     {% render_table table|title %}#}
+{#      hi#}
+{#    {{ content }}#}
+{#    <div class="col-sm-10">#}
+{#    <table>#}
+{#    {%  for row in content%}#}
+{#        <tr>#}
+{#         <div class="col-sm-10">#}
+{#         {{ row.0}}#}
+{#        </tr>#}
+{##}
+{#         </div>#}
+{#    {% endfor %}#}
+{#</table>#}
+{#    </div>#}
+{#{% for row in data %}#}
+{#    "{{ row.0|addslashes }}", "{{ row.1|addslashes }}", "{{ row.2|addslashes }}", "{{ row.3|addslashes }}", "{{ row.4|addslashes }}"#}
+{#{% endfor %}#}
+
+{% endblock %}
