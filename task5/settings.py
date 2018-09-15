@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.staticfiles',
     'django.contrib.messages',
-    'page',
+    'page.apps.PageConfig',
     'django_tables2',
+    'task4.apps.Task4Config',
 ]
 
 
