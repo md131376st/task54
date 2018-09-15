@@ -13,12 +13,14 @@ from collections import defaultdict
 import dataStatistics.task as task
 from django_tables2   import RequestConfig
 # df= pd
+#read the csv file that is saved in database
+# it been tested only for one csv file in dataset
 name = dict()
 for e in CsvDoc.objects.all():
     dd = defaultdict(list)
     name= pd.read_csv("media/" + e.csv_file.name)
 
-
+#read the csv files and return the pandas dataFrame to django template
 def some_view(request):
     if request.method == 'GET':
         # name = pd.read_csv("media/" + e.csv_file.name)
@@ -26,7 +28,8 @@ def some_view(request):
         # print(df.to_html)
         return render(request, 'csvfile.html', {'df':name})
 
-
+# this function allows dinamic urls 
+# in this function we cheak the end of url and if it maches are pandas datafram columns we return the plot else it shows a Http404 page
 def static_page(request, page_alias):  # page_alias holds the part of the url
     page_alias=page_alias.split('/')
     # print(name.columns)
