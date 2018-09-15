@@ -10,6 +10,7 @@ from django.http import HttpResponse
 
 
 def statistics_of_binary_data(target):
+    # the next line has to be hare to be able to use mpld3.fig_to_html
     fig = plt.figure()
     target_list = list()
     target_set = ['0','1']
@@ -38,12 +39,15 @@ def statistics_of_binary_data(target):
 
     plt.subplot(133)
     plt.plot(target_set, numbers)
-
+    
     plt.suptitle('Binaery Plotting')
+    # cheak if the plot is correct
     plt.show()
-
+    
+    # mpld3 makes are plot to html and returns it 
     mpld3.fig_to_html(fig)
     # mpld3.show()
+    
     return HttpResponse(mpld3.fig_to_html(fig, template_type="simple"))
 
 
@@ -89,6 +93,7 @@ def statistics_of_categorical_data(target):
     plt.show()
     # print(mpld3.fig_to_html(fig))
     # print(mpld3.fig_to_html(fig))
+      # mpld3 makes are plot to html and returns it 
     mpld3.fig_to_html(fig, template_type="simple")
     return HttpResponse(mpld3.fig_to_html(fig, template_type="simple"))
 
@@ -109,10 +114,11 @@ def statistics_of_numerical_data(target):
 
     print("Mean of target is: ")
     print(mean_of_data)                             #print mean of target
+     # the next line has to be hare to be able to use mpld3.fig_to_html
     fig = plt.figure()
     out = pd.cut(target, bins=[min_of_data, range_of_bins + min_of_data, range_of_bins*2 + min_of_data, max_of_data], include_lowest=True) #darw plot
     ax = out.value_counts(sort=False).plot.bar(rot=0, color="b", figsize=(6, 4))
-
+      # mpld3 makes are plot to html and returns it 
     mpld3.fig_to_html(fig)
     return HttpResponse(mpld3.fig_to_html(fig,template_type="simple"))
 
