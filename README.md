@@ -1,24 +1,14 @@
-asn1crypto==0.24.0
-cffi==1.11.5
-cryptography==2.3.1
-cycler==0.10.0
-Cython==0.28.5
-Django==2.1
-django-tables2==1.21.2
-ez-setup==0.9
-idna==2.7
-kiwisolver==1.0.1
-matlab==0.1
-matplotlib==2.2.3
-mysql-connector-python==2.0.4
-mysqlclient==1.3.13
-numpy==1.15.1
-pandas==0.23.4
-protobuf==3.6.1
-pycparser==2.18
-PyMySQL==0.9.2
-pyparsing==2.2.0
-pystan==2.17.1.0
-python-dateutil==2.7.3
-pytz==2018.5
-six==1.11.0
+# connecting plot and table in django and uploding a csv file and saving in sqlite3
+<p dir='rtl' align='right'>
+ فایل task 5  که در این مشاهده می کنید فایل ابتدایی برای کارکردن با django  می باشد . این پروژه شامل :  
+</p>
+
+Task4: 
+<p dir='rtl' align='right'>
+در این app سیع براین شده که داده های فایل csv  را که در template  django  به صورت simple html  نمایش داده شده را به نمودار های اماری هر ستون از داده های مرتیط کنیم.  
+</p>
+Page:
+   
+ <p dir='rtl' align='right'>
+در این app  یک form برای بارگذاری یک فایل  csv ، ذخیره ان در database و نمایش error در صورتی که فایل فرمت csv نداشته باشد انجام شده است.   
+</p> 
