@@ -41,10 +41,11 @@ def static_page(request, page_alias):  # page_alias holds the part of the url
                 # print(name[e])
                 return task.statistics_of_categorical_data(name[e])
             else:
+                isBool = True
                 for each in name[e]:
                     if (each != 0 and each != 1):
-                         isBool = False
-                         break
+                        isBool = False
+                        break
                 if isBool == True:
                     print("hi1")
                     return task.statistics_of_binary_data(name[e])
